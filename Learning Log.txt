@@ -1,0 +1,89 @@
+Learning Log
+
+11/04 - “Easy Facial Rigging and Animation Approaches,” Pedro Tavares Barata Bastos, 2015. Accessed: April 11, 2026. [Online]
+
+"Facial rigging is the act of planning and building the deformation mechanics and the interactive control interfaces to animate the face of a 3D character. The process of planning and building these structures is carried out by riggers, who are the artists responsible for providing the animators with an articulated facial rig." <- Definition of facial rigging
+
+"In addition, this field lacks advanced and complete documentation and the references available do not provide validation on how to build a facial rig. Instead, they are limited to isolated cases, which generally do not encompass dealing with more complex facial behaviours." <- About the lack of documentation on rigging
+
+"The earliest attempt to determine the minimum number of polygons needed to model a realistic face established the use of 250 polygons [Parke 1972, Parke 1974]. Since then, this number has been gradually increasing due to the also gradual higher demand for better-looking facial models and also the evolution of computer graphics hardware" <- about early cases of topology
+
+The paper highlights that mesh topology is crucial for proper deformation, regardless of the modelling technique. Edge loops are typically arranged based on facial anatomy to support realistic movement. It also notes that early approaches focused mainly on surface appearance rather than the underlying drivers of facial motion.
+
+"In a character's body, the joints act as the links between the bones to allow bending and twisting the entire skeleton. In a character's face, the skeleton needs to be highly articulated, but it is generally not necessary for it to be similar to a real person's skeleton." <- About the positioning of joints in the face
+
+"For the skeleton to work properly, the rigger uses constraints [Badler et al. 1986], which allow to connect and restrict the position, orientation and scale of the bones. Constraints limit the transformations of bones using non-hierarchical relationships [O'Neill 2008]. These are setup by the rigger with the particular goal to prevent the animator from doing unexpected manipulations of the rig controls, which could cause incorrect mechanical movements and awkward deformations" <- About constraints and parenting
+
+"BTMs are duplicated facial models of an original one with equal topology [Maraffi 2003] but sculpted with a distinct shape in order to blend from the original to the duplicate via a weight parameter in the deformer." <- What are blendshapes
+
+About UI: The paper discusses the concept of personalized facial rig controls, proposing a user-adapted interface that can respond to individual animator preferences. It highlights that traditional rig interfaces are often fixed and limited due to production constraints, resulting in less optimal workflows. A personalized system could reduce the need for repeated adjustments and improve both efficiency and usability.
+
+"Skeletons and blendshapes are the most common techniques because they are the ones that artists use the most. The reasons why artists use them more is that (i) they perform efficiently, (ii) they integrate well with each other and (iii) they are available in the major 3D tools" <- About why joint and blendshape-based techniques are the most common
+
+
+15/04 - “An Investigation of Facial Rigging for Animation,” Patrick Clarke, 2011. Accessed: April 15, 2026. [Online].
+
+"[...] in real facial structures there are lines that the skin follows called cleavage lines. These lines go up and down the entire body and help give our skin strength, but also over time form wrinkles. Surgeons follow these lines when cutting into the skin so when it comes time for healing, it's done quickly and effectively." <- about the formation of wrinkles 
+
+
+18/04 - [1] D. Komorowski, V. Melapudi, D. Mortillaro, and G. S. Lee, “A hybrid approach to facial rigging,” in ACM SIGGRAPH ASIA 2010 Sketches, in SA ’10. New York, NY, USA: Association for Computing Machinery, Dec. 2010, pp. 1–2. doi: 10.1145/1899950.1899992.
+
+"PSD operates by storing multiple poses and interpolating between the poses according to the positioning of controls. [...] each pose of PSD identifies a pairing of a parametric location of a control to a set of values [...] these values indirectly influence the use of deformers, while others apply directly to the scaling of blendshapes. The blendshapes introduce refinements to the face that are either unattainable by the deformers alone. As the controls move, values are updated, and both deformers and blendshapes modify the face. The interpolation of every pose is performed collectively. This results in the simultaneous interpolation of values for both deformers and blendshapes. Each modifies the face independently, and the interpolation of one is ultimately layered upon the interpolation of the other." <- About Pose Space Deformation
+
+
+21/04 - https://www.wagnertechartist.com/post/creating-a-face-rig-with-joints-and-blend-shapes
+
+Blend Shape–Based Deformation
+Pros
+- Easy to set up because it does not rely heavily on skin weighting
+- Produces very clean, stable shapes that stay on model
+- Extremely fast due to simple linear interpolation
+- Efficient and performant for real-time or production use
+Cons
+- Limited flexibility because it relies on predefined shapes
+- Poor handling of transitions and secondary animation
+- Linear, additive nature can cause double transformations
+- Difficult to achieve smooth, arcing motion between poses
+- Requires additional systems (e.g., RBF solver) to improve interpolation
+
+Joint-Based Deformation
+Pros
+- Smooth interpolation between poses due to 3D transformations
+- Offers greater control over deformation through rig setup
+- Supports secondary controls, improving animator flexibility
+- More interactive and adjustable during animation
+Cons
+- Lower deformation fidelity compared to blend shapes
+- Requires strong skin weighting skills to achieve good results
+- Harder to match the precise, sculpted detail of blend shapes
+
+Hybrid Approach
+- Combines the high-quality deformation of blend shapes with the flexibility of joints
+- Maintains clean, on-model shapes while allowing additional control layers
+- Enables both precise sculpted expressions and dynamic adjustments
+- Results in a more complete and animator-friendly facial rig
+
+
+28/04 - Marie-Luce Viaud, Hussein Yahia. Facial animation with wrinkles. [Research Report] RR-1753, INRIA. 1992.
+⟨inria-00076993⟩
+
+"Wrinkles are [...] a major sign of aging [...] and are important for understanding and interpreting facial expressions [...] There are two types of wrinkles: expressive wrinkles and micro wrinkles due to aging [...] Expressive wrinkles are caused by muscle movement and become more permanent due to changes in skin structure and elasticity [...] Aging causes elastic fibers to stretch and thin, collagen to cluster, and skin regeneration to slow, leading to micro furrows [...] These processes create two main characteristics: the micro furrow and the bulge of the wrinkle [...] Changes in the dermo-epidermic junction reduce skin elasticity [...] Expressive wrinkles are creases formed by muscle tension, and while their intensity varies, their shape and placement remain consistent [...] Wrinkles can therefore be linked to specific muscle actions and represented using a standardized reference wrinkle mask." <- about how wrinkles form and why they matter for facial animation.
+
+
+30/04 - M. Mäkäräinen and T. Takala, “An approach for creating and blending synthetic facial expressions,” in Intelligent Virtual Agents (IVA 2009), Lecture Notes in Computer Science, vol. 5773, Z. Ruttkay et al., Eds. Berlin, Heidelberg: Springer, 2009, pp. 245–249.
+
+"Regarding wrinkles, two kinds can be distinguished: (a) permanent wrinkles, which are caused by ageing and habitual facial expressions as the skin loses elasticity; (b) temporary wrinkles, which are caused by deformations of the skin layers as a result of muscle contraction. [...] the latter is associated with emotional facial expressions. The argument here is that wrinkles can be an important, if not crucial, clue to the perception of the emotion the agent is trying to convey. In particular, the work focuses on simulation of wrinkles in the forehead caused by the expression of surprise, sadness and anger" <- about types of wrinkles and their role in conveying facial emotions
+
+
+03/05 - https://graphics.unizar.es/papers/JimenezWrinkles_low.pdf
+
+"Bump maps and normal maps are well known techniques for adding the illusion of surface features to otherwise coarse, undetailed surfaces. The use of normal maps to capture the facial detail of human characters is considered standard practice for the past several generations of real-time rendering applications. However, using static normal maps unfortunately does not accurately represent the dynamic surface of an animated human face"
+
+"However, we have found that wrinkles exhibit very little to no ambient occlusion, unless the parameters used for their generation are pushed beyond their natural values. Similarly, self-occlusion and self-shadowing can be thought to be an important feature when dealing with wrinkles, but in practice, we have found that the use of parallax occlusion mapping is most of the time unnoticeable, for the specific case of facial wrinkles"
+
+
+03/05 - https://jeremyernst.wordpress.com/wp-content/uploads/2011/03/jeremy_ernst_fastandefficietfacialrigging.pdf#page=32.00
+
+"I looked heavily to the facial action coding system(F.A.C.S) for building my pose library. The essence is, there are 32 action units of the face that can achieve the entirety of the range of (e)motion of the face. An action unit is defined as a contraction or relaxation of 1 or more muscles in the face." <- FACS used to determine the amount of blendshapes
+
+"That brings me to joint placement. Since Iʼve been using the analogy that the locators could be thought of as motion capture tracking, I actually looked a lot at facial mocap setups to see where they placed their markers. I thought that if mocap studios thought an area was important enough to receive a marker, it would probably hold true for my setup as well." <- Choosing the placement + amount of joints
