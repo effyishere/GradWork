@@ -26,6 +26,13 @@ About UI: The paper discusses the concept of personalized facial rig controls, p
 "[...] in real facial structures there are lines that the skin follows called cleavage lines. These lines go up and down the entire body and help give our skin strength, but also over time form wrinkles. Surgeons follow these lines when cutting into the skin so when it comes time for healing, it's done quickly and effectively." <- about the formation of wrinkles 
 
 
+15/04 - J. Bibliowicz, An Automated Rigging System for Facial Animation, M.S. thesis, Graduate School, Cornell University, Jan. 2005.
+
+"Computerized surface models specify the position of their vertices with respect to an arbitrary origin, also known as the pivot point. By changing the position and orientation of the pivot coordinate system, the entire surface is repositioned within the scene. A system of hierarchical transforms works by applying the transform chain to the pivot point, thus altering the locations of surfaces." <- about the definition of constraints
+
+"Imagine for a moment that you are playing with a hand puppet. As you open and close your hand, different parts of the puppet move, achieving expressive poses. Consider each finger in your hand as an animation control and let the puppet represent the surface of your character. As you articulate your hand, you are altering the shape of the puppet surface. This is the essence of the skin deformer." <- defining the skin deformer/skinning 
+
+
 18/04 - [1] D. Komorowski, V. Melapudi, D. Mortillaro, and G. S. Lee, “A hybrid approach to facial rigging,” in ACM SIGGRAPH ASIA 2010 Sketches, in SA ’10. New York, NY, USA: Association for Computing Machinery, Dec. 2010, pp. 1–2. doi: 10.1145/1899950.1899992.
 
 "PSD operates by storing multiple poses and interpolating between the poses according to the positioning of controls. [...] each pose of PSD identifies a pairing of a parametric location of a control to a set of values [...] these values indirectly influence the use of deformers, while others apply directly to the scaling of blendshapes. The blendshapes introduce refinements to the face that are either unattainable by the deformers alone. As the controls move, values are updated, and both deformers and blendshapes modify the face. The interpolation of every pose is performed collectively. This results in the simultaneous interpolation of values for both deformers and blendshapes. Each modifies the face independently, and the interpolation of one is ultimately layered upon the interpolation of the other." <- About Pose Space Deformation
