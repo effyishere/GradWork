@@ -94,3 +94,39 @@ Hybrid Approach
 "I looked heavily to the facial action coding system(F.A.C.S) for building my pose library. The essence is, there are 32 action units of the face that can achieve the entirety of the range of (e)motion of the face. An action unit is defined as a contraction or relaxation of 1 or more muscles in the face." <- FACS used to determine the amount of blendshapes
 
 "That brings me to joint placement. Since Iʼve been using the analogy that the locators could be thought of as motion capture tracking, I actually looked a lot at facial mocap setups to see where they placed their markers. I thought that if mocap studios thought an area was important enough to receive a marker, it would probably hold true for my setup as well." <- Choosing the placement + amount of joints
+
+10/05 - J. Jimenez, J. I. Echevarria, C. Oat, and D. Gutierrez, “Practical and Realistic Facial Wrinkles Animation”.
+
+"Bump maps and normal maps are well known techniques for adding the illusion of surface features to otherwise coarse, undetailed surfaces. The use of
+normal maps to capture the facial detail of human characters is considered
+standard practice for the past several generations of real-time rendering
+applications. However, using static normal maps unfortunately does not
+accurately represent the dynamic surface of an animated human face" <- about texture-based wrinkle setups
+
+10/05 - Caroline Larboulette, Marie-Paule Cani. Real-Time Dynamic Wrinkles. Computer Graphics International (CGI’04), Jun 2004, Crete, Greece. pp.522-525, ⟨10.1109/CGI.2004.1309258⟩. ⟨inria-00537455⟩
+
+"One can classify wrinkles into two different categories:static and dynamic wrinkles. The first ones are present on the skin regardless of movement and may only change over a lifetime (aging wrinkles case). Wrinkles of the other category, which we call dynamic wrinkles, rather depend on the current deformation of tissues." <- about diffrrent types of wrinkles
+
+"In 1978, Blinn introduced bump mapping, which consisted in modifying surface normals before lighting calculations to give a visual impression of wrinkles, without deforming the geometry. This idea has been extensively used since then, especially for facial wrinkles. Although being efficient and giving acceptable visual results in many cases, this technique suffers some drawbacks. As the geometry remains undeformed, the silhouette of objects is visually incorrect (noticeable in closed views) and no accurate collision detection in the wrinkled region is possible." <- about the origin of bump maps and its drawbacks 
+
+12/05 - adamspringg, “FACS Rigging & Texture Blending | Digital Humans,” Adam Spring. Accessed: Mar. 01, 2026. [Online]. Available: https://adamspring.co.uk/2020/05/25/facs-rigging-texture-blending-digital-humans/ 
+
+"Facial Action Coding System’s (FACS) are a feature often used within animation pipelines for visual effects and games production. [...]The human face has a complex anatomy made up from 43 different muscles, which makes it extremely hard to recreate and look believable. Rather than representing every individual muscle on your facial rig, you can use blend shapes to represent them in groups which create different shape variations depending on whether the muscles are expanding or contracting." <- about FACS and facial muscles in rigging
+
+12/05 - [1] V. Orvalho, P. Bastos, F. Parke, B. Oliveira, and X. Alvarez, “A Facial Rigging Survey,” in Eurographics 2012 - State of the Art Reports, The Eurographics Association, 2012, p. 22 pages. doi: 10.2312/CONF/EG2012/STARS/183-204. 
+
+"Later in the mid 1970s, Ekman and Friesen [EF75] identified the six basic facial expressions: surprise, fear, disgust, anger, happiness and sadness. Soon after unraveling the main facial expressions, Ekman and Friesen [EF78] created FACS, the Facial Action Coding System. FACS is a manual that recognizes, describes and scores the muscular activity of the human face into Action Units (AUs), Action Descriptors (ADs) and Gross Behavior Codes (GBCs). It comprises the visible facial movements that produce momentary changes in facial appearance (either emotional or conversational signals). It is the largest and most accurate reference available regarding the study of the human facial behaviors. Therefore, FACS is a reliable reference to determine the categories in which to fit each facial behavior, without having to recognize what facial muscles are responsible for what movement." <- definition of FACS
+
+14/05 - J. P. Lewis, M. Cordner, and N. Fong, “Pose Space Deformation: A Uniﬁed Approach to Shape Interpolation and Skeleton-Driven Deformation”.
+
+"This deformation approach proceeds from the observation that several types of deformation can be uniformly represented as mappings from a pose space [...] to displacements in the object local coordinate frames."<- defining posed space deformation
+
+"The crux of our approach is the identification of an appropriate space for defining deformations. [...] the interpolation domain is (a subset of) the pose space of an articulated character, or equivalently the space defined by some set of parameters such as facial controls." <- pose space = space defined by rig controls/joint poses, deformations are driven by those poses.
+
+"we wish to express the deformation of a surface as a function of either the pose of an underlying skeleton, or equivalently as a function of some other set of parameters such as the {smile, raise-eyebrow,...} controls desirable in facial animation" <- procedural response in PSD
+
+"The pose space is the space spanned by the variations of these controls." <- small definition
+
+18/05 - [1] S. Knipping, “#RiggingInMaya | Part 15 | Intermediate | Face Rig - Blend Shapes,” YouTube, Jul. 25, 2021. [Video]. Available: [YouTube](https://youtu.be/QhkT_U5S9x8?utm_source=chatgpt.com). [Accessed: May 24, 2026].
+
+According to antcgi, eyelids and jaw are better set up with joints. 
