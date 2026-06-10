@@ -22,7 +22,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -83,7 +83,107 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Model_01(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Geometry
+      parentName: Model_01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character
+      parentName: Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Body
+      parentName: Character
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye
+      parentName: Character
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eyebrows
+      parentName: Character
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mouth
+      parentName: Character
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: cleanBS
+      parentName: Character
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Joints
+      parentName: Model_01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: COG_JNT
+      parentName: Joints
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: neck_JNT
+      parentName: COG_JNT
+      position: {x: 1.1169932e-18, y: -4.960446e-34, z: -0.33578563}
+      rotation: {x: -1.6241349e-16, y: -0.60771096, z: -2.777726e-16, w: 0.7941583}
+      scale: {x: 1, y: 1, z: 1}
+    - name: face_mid_JNT
+      parentName: neck_JNT
+      position: {x: -0.09970154, y: -2.2138189e-17, z: -1.7763568e-17}
+      rotation: {x: 0, y: 0.6087614, z: -0, w: 0.7933533}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jaw_root_JNT
+      parentName: face_mid_JNT
+      position: {x: -0.027766857, y: 9.451328e-18, z: 0.02126458}
+      rotation: {x: -1.5654145e-14, y: 0.31954744, z: 5.301315e-15, w: 0.94757026}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jaw_end_JNT
+      parentName: jaw_root_JNT
+      position: {x: -0.089999996, y: 3.9968027e-17, z: -1.0791367e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: head_bind_JNT
+      parentName: face_mid_JNT
+      position: {x: 0.000070459566, y: -5.8983673e-18, z: -0.026619447}
+      rotation: {x: 0, y: -0.10607841, z: -0, w: 0.99435776}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_eye_root_JNT
+      parentName: head_bind_JNT
+      position: {x: -0.05173208, y: 0.027933277, z: -0.0024617955}
+      rotation: {x: -0.70699614, y: 0.13508557, z: 0.012506973, w: 0.6940836}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_eyeball_JNT
+      parentName: R_eye_root_JNT
+      position: {x: -0.029344426, y: -0.0062373504, z: 2.4424906e-17}
+      rotation: {x: 0.011463333, y: -4.999302e-16, z: -0.0649568, w: 0.9978222}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_eye_root_JNT
+      parentName: head_bind_JNT
+      position: {x: -0.051732015, y: -0.0279333, z: -0.002461727}
+      rotation: {x: 0.012506974, y: 0.6940835, z: 0.70699614, w: -0.13508555}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_eyeball_JNT
+      parentName: L_eye_root_JNT
+      position: {x: 0.0293448, y: 0.006237, z: 0.000000072300146}
+      rotation: {x: 0.011463357, y: 5.655589e-17, z: -0.06495691, w: 0.9978222}
+      scale: {x: 1, y: 1, z: 1}
+    - name: upper_mouth_JNT
+      parentName: face_mid_JNT
+      position: {x: -0.09925468, y: 4.9419356e-17, z: 0.025797434}
+      rotation: {x: 0.5006613, y: 0.5006613, z: -0.49933785, w: -0.49933785}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -92,7 +192,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: COG_JNT
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
@@ -100,7 +200,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
