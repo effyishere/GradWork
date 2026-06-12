@@ -97,11 +97,8 @@ Hybrid Approach
 
 10/05 - J. Jimenez, J. I. Echevarria, C. Oat, and D. Gutierrez, “Practical and Realistic Facial Wrinkles Animation”.
 
-"Bump maps and normal maps are well known techniques for adding the illusion of surface features to otherwise coarse, undetailed surfaces. The use of
-normal maps to capture the facial detail of human characters is considered
-standard practice for the past several generations of real-time rendering
-applications. However, using static normal maps unfortunately does not
-accurately represent the dynamic surface of an animated human face" <- about texture-based wrinkle setups
+"Bump maps and normal maps are well known techniques for adding the illusion of surface features to otherwise coarse, undetailed surfaces. The use of normal maps to capture the facial detail of human characters is considered
+standard practice for the past several generations of real-time rendering applications. However, using static normal maps unfortunately does not accurately represent the dynamic surface of an animated human face" <- about texture-based wrinkle setups
 
 10/05 - Caroline Larboulette, Marie-Paule Cani. Real-Time Dynamic Wrinkles. Computer Graphics International (CGI’04), Jun 2004, Crete, Greece. pp.522-525, ⟨10.1109/CGI.2004.1309258⟩. ⟨inria-00537455⟩
 
@@ -130,3 +127,235 @@ accurately represent the dynamic surface of an animated human face" <- about tex
 18/05 - [1] S. Knipping, “#RiggingInMaya | Part 15 | Intermediate | Face Rig - Blend Shapes,” YouTube, Jul. 25, 2021. [Video]. Available: [YouTube](https://youtu.be/QhkT_U5S9x8?utm_source=chatgpt.com). [Accessed: May 24, 2026].
 
 According to antcgi, eyelids and jaw are better set up with joints. 
+
+22/05 -  N. Sarkkomaa, “Facial Rigging Techniques”.
+
+"Control shapes are simplified objects that can be used to represent a bone. This allows the rigger to create much more simplified controls that are easy to grab on to and manipulate.[...] Generally, the goal of using control shapes is to allow the character to be seen as well as possible and to allow more intuitive controls for the animator" <- about control shapes 
+
+"Blend shapes are generally viewed as a list of names, which have sliders attached to them that allow the user to control the intensity of the blend shape [...] controlling them becomes quite unintuitive once there starts to be tens of blend shapes from which the user has to always find the correct one to tweak some values. In order to make all of that a lot simpler and intuitive for the animators, most rigs generally use drivers." <- about blendshapes
+
+"Things like wrinkles are notoriously difficult to achieve using only bones so blend shapes were chosen for this task" <- about whether blendshapes or joints are better for wrinkles
+
+---
+
+My sources + small summary
+
+[1] antCGi, #RiggingInMaya | Part 15 | Intermediate | Face Rig - Blend Shape Controls, (Feb. 14, 2020). Accessed: May 24, 2026. [Online Video]. Available: https://www.youtube.com/watch?v=QhkT_U5S9x8
+
+This video was useful to understand better how Blendshapes can be connected to the rig.
+
+
+[2] N. Magnenat-Thalmann, P. Kalra, J. Luc Leveque, R. Bazin, D. Batisse, and B. Querleux, "A computational skin model: fold and wrinkle formation," IEEE Trans. Inform. Technol. Biomed., vol. 6, no. 4, pp. 317–323, Dec. 2002, doi: 10.1109/TITB.2002.806097.
+
+This study focuses on hyper-realistic 3D wrinkles, but I specifically used it to better understand the different types of wrinkles and how they form.
+
+"As skin changes with age, wrinkles emerge and become more pronounced. Wrinkles depend on the nature of skin and muscle contraction; in this article two types of wrinkles are considered: expressive wrinkles (particularly relevant for the face) and wrinkles due to age. Folds appear when skin is deformed but disappear after removal of the deformation. Repetition of skin folding on the same site would progressively give rise to permanent wrinkles. Wrinkles are important for understanding and interpreting facial expressions and can provide some indication of the age of a person."
+
+
+[3] V. Orvalho, P. Bastos, F. Parke, B. Oliveira, and X. Alvarez, "A Facial Rigging Survey," in Eurographics 2012 - State of the Art Reports, The Eurographics Association, 2012, p. 22 pages. doi: 10.2312/CONF/EG2012/STARS/183-204.
+
+This survey is another cornerstone in the topic of rigging. This paper explains every single term in rigging, from the fundamentals to things like motion data and morphologies. I specifically used it to cite their definition of rigging, comparing it to puppeteering.
+
+"If one looks at a model as a digital version of the body of a marionette, the control rig allows to pull the virtual strings attached to a model, conferring animation."
+
+
+[4] D. Komorowski, V. Melapudi, D. Mortillaro, and G. S. Lee, "A hybrid approach to facial rigging," in ACM SIGGRAPH ASIA 2010 Sketches, in SA '10. New York, NY, USA: Association for Computing Machinery, Dec. 2010, pp. 1–2. doi: 10.1145/1899950.1899992.
+
+This paper is well known among riggers, as it is referenced in almost every paper on the topic. It talks about hybrid rigs, but I specifically used it to learn more about Pose-Space Deformation and how FACS can be used in rigging.
+
+"PSD operates by storing multiple poses and interpolating between the poses according to the positioning of controls."
+
+
+[5] "A Realistic Facial Rig Made With BlendShapes & Joints." Accessed: Feb. 25, 2026. [Online]. Available: https://80.lv/articles/a-realistic-facial-rig-made-with-blendshapes-joints
+
+This article showcases a realistic facial rig that combines blendshapes, joints, and wrinkle deformations. I used it primarily as a visual and technical reference to study how wrinkles can be integrated into a facial rig and to gather inspiration for the design of my own wrinkle system.
+
+
+[6] Y. Bando, T. Kuratate, and T. Nishita, "A simple method for modeling wrinkles on human skin," in 10th Pacific Conference on Computer Graphics and Applications, 2002. Proceedings., Oct. 2002, pp. 166–175. doi: 10.1109/PCCGA.2002.1167852.
+
+This source explains a wrinkle generation technique based on facial muscle movement and skin compression. I used it to better understand the theory behind wrinkle formation and to support the idea that wrinkles should appear dynamically in response to facial expressions rather than being permanently visible.
+
+
+[7] "An Investigation of Facial Rigging for Animation - ProQuest." Accessed: Apr. 15, 2026. [Online]. Available: https://www.proquest.com/openview/482d1376c4f7238468aaaa24da807067/1?pq-origsite=gscholar&cbl=18750
+
+This thesis provided a clear and accessible explanation of facial rigging concepts, making it one of the easiest sources for me to understand. In addition to the technical information, I used the facial model presented in the paper as a reference when searching for a suitable character mesh, particularly because of its clean topology and suitability for facial deformation.
+
+
+[8] "AWS Artist Series: Creating characters with dynamic wrinkles | AWS for M&E Blog." Accessed: Feb. 25, 2026. [Online]. Available: https://aws.amazon.com/blogs/media/aws-artist-series-creating-characters-with-dynamic-wrinkles/
+
+This article explains how dynamic wrinkles were created for a professional character production using tension maps. I used it to understand how tension maps can drive wrinkle formation based on facial movement, and it served as a practical industry example to support the section on tension maps in my paper.
+
+
+[9] "BlendForces: A Dynamic Framework for Facial Animation - Barrielle - 2016 - Computer Graphics Forum - Wiley Online Library." Accessed: Apr. 18, 2026. [Online]. Available: https://onlinelibrary.wiley.com/doi/epdf/10.1111/cgf.12836
+
+This paper provided a detailed technical overview of blendshape-based facial animation. Although it was more complex than some of my other sources, it helped me gain a deeper understanding of how blendshape systems function and their role in creating realistic facial deformations, supporting the technical foundation of my facial rig.
+
+
+[10] "Character Creator 4 Online Manual - Expression Wrinkles Library in Expression." Accessed: May 07, 2026. [Online]. Available: https://manual.reallusion.com/Character-Creator-4/Content/ENU/4.2/06-Wrinkle/Expression-Wrinkle-CC3Plus-Library.htm
+
+This documentation for Character Creator's expression wrinkle system served as both a technical and visual reference. It helped me understand how dynamic wrinkles are sculpted and applied in a production-ready character workflow, while also providing examples of the most important facial wrinkles to represent in 3D for different expressions.
+
+
+[11] "Create a joint based face rig - Nukeygara." Accessed: Apr. 21, 2026. [Online]. Available: https://www.nukeygara.com/akeyschool/rigging/create-a-joint-based-face-rig
+
+This tutorial was used as a technical and visual reference for joint-based facial rigging. Although it was created in Akeytsu rather than Maya, it provided useful examples of facial joint placement and controller organization that helped guide the implementation of my own facial rig. I also used several of its illustrations in my paper to demonstrate the structure and appearance of a joint-based facial rig.
+
+
+[12] A. Wagner, "Creating a Face Rig With Joints and Blend Shapes," wagner-techartist. Accessed: Apr. 21, 2026. [Online]. Available: https://www.wagnertechartist.com/post/creating-a-face-rig-with-joints-and-blend-shapes
+
+This was one of the most valuable sources used in my research. It provides a detailed comparison of joint-based, blendshape-based, and hybrid facial rigging approaches, discussing their advantages, limitations, and implementation in Maya. The article helped me better understand the differences between joint and blendshape rigs, which supported the comparative analysis presented in my paper. I also used several of its illustrations to visually explain the different facial rigging methods.
+
+
+[13] "Dynamic Wrinkles & Facial Ageing | Monaz Clinic." Accessed: May 22, 2026. [Online]. Available: https://monazclinic.com/blog/dynamic-wrinkles-facial-ageing-aesthetics/
+
+This source was used to support the theoretical framework on facial wrinkles. Although it originates from a plastic surgery clinic, it provides a clear explanation of the differences between dynamic and static wrinkles and how they develop through facial movement and ageing. I also used one of its illustrations in my paper to visually demonstrate the distinction between these two types of wrinkles.
+
+
+[14] L. Dutreve, A. Meyer, and S. Bouakaz, "Easy acquisition and real-time animation of facial wrinkles," Computer Animation and Virtual Worlds, vol. 22, no. 2–3, pp. 169–176, 2011, doi: 10.1002/cav.395.
+
+This paper explores techniques for acquiring and animating facial wrinkles in real time using wrinkle maps. Although I did not rely heavily on this source in my project, it provided additional background on dynamic wrinkle animation and reinforced some of the concepts discussed in other literature regarding the integration of fine wrinkle details into facial animation systems.
+
+
+[15] P. T. B. Bastos, "Easy Facial Rigging and Animation Approaches," Mar. 2015, doi: 10.34626/vbwx-0k20.
+
+This dissertation provided useful background on facial rigging techniques and the use of blendshapes in facial animation. In particular, it discusses how corrective blendshapes can be used as secondary deformations to add subtle details such as wrinkles, rather than serving as the primary facial motion. This reinforced the approach used in my project, where wrinkle shapes were sculpted separately and activated automatically in response to facial poses to enhance realism.
+
+
+[16] M.-L. Viaud and H. Yahia, "Facial animation with wrinkles," INRIA, Research Report RR-1753, 1992. Accessed: Apr. 28, 2026. [Online]. Available: https://inria.hal.science/inria-00076993
+
+This paper was used as background research on facial wrinkles. It provided a clear explanation of how wrinkles form and behave, helping me establish the theoretical foundation for the wrinkle system discussed in my paper.
+
+
+[17] "Facial muscles," Kenhub. Accessed: Apr. 18, 2026. [Online]. Available: https://www.kenhub.com/en/library/anatomy/the-facial-muscles
+
+This source was used as an anatomical reference for the facial muscles. It helped me understand how different muscle movements influence facial expressions and the formation of dynamic wrinkles.
+
+
+[18] "Facial Rig," Mateusz Szewczyk. Accessed: May 10, 2026. [Online]. Available: https://fasolfazi.artstation.com/projects/mqNR0Y
+
+This source provides a breakdown of a joint-based facial rigging workflow. I used it as a technical reference to better understand controller placement and rig organization, and its accompanying video helped me learn how locators can be used as intermediary objects between controllers and joints to create a cleaner rig setup.
+
+
+[19] "FACIAL RIGGING," Skanny Marquer. Accessed: May 10, 2026. [Online]. Available: https://skanny.artstation.com/projects/lx139G
+
+This rig showcase was used as a visual reference for joint-based facial rigging. It provided examples of how facial joints can be positioned across different regions of the face, helping me compare approaches and inform the placement of joints in my own rig.
+
+
+[20] J. Hjelm, Facial Rigging and Animation in 3D : From a videogame perspective. 2010. Accessed: Apr. 22, 2026. [Online]. Available: https://urn.kb.se/resolve?urn=urn:nbn:se:hgo:diva-679
+
+This thesis compares joint-based and blendshape-based facial rigging approaches and evaluates their respective strengths and weaknesses. I used it as a supporting source for my comparative analysis, as its research focus closely aligns with the comparison between joint and blendshape rigs presented in my paper.
+
+
+[21] N. Sarkkomaa, "Facial Rigging Techniques".
+
+This thesis was one of the most useful sources for my research. It provides a clear and accessible comparison of different facial rigging techniques, making complex concepts easier to understand. I used it extensively in the theoretical framework, particularly for discussing facial rigging approaches and the importance of topology in achieving believable facial deformations.
+
+
+[22] adamspringg, "FACS Rigging & Texture Blending | Digital Humans," Adam Spring. Accessed: Mar. 01, 2026. [Online]. Available: https://adamspring.co.uk/2020/05/25/facs-rigging-texture-blending-digital-humans/
+
+This article was a useful introduction to using FACS in facial rigging. It helped me understand how facial expressions can be divided into action units and translated into blendshapes and wrinkles. I used it mainly to better understand the relationship between facial movement and wrinkle generation.
+
+
+[23] "Fast and Efficient Facial Rigging in GEARS OF WAR 3." Accessed: May 10, 2026. [Online]. Available: https://www.gdcvault.com/play/1014366/Fast-and-Efficient-Facial-Rigging
+
+This was one of the most valuable sources I used. It gave me a practical look at how facial rigs are built in the game industry and helped me understand production-oriented rigging workflows. I also used the mocap marker layouts shown in the presentation as a guide for placing the joints in my own facial rig.
+
+
+[24] P. Ashara, "How to Add Realistic Facial Wrinkles to 3D Characters | Blog," Whizzy Studios. Accessed: Feb. 25, 2026. [Online]. Available: https://www.whizzystudios.com/post/how-to-add-realistic-facial-wrinkles-to-3d-characters
+
+This article helped me understand the complete process of adding facial wrinkles to a 3D character. It was particularly useful for learning how tension maps work and how they can be used to drive wrinkles. I also used it as a reference for wrinkle design and placement when developing my own wrinkle system.
+
+
+[25] M. Courgeon, S. Buisine, and J.-C. Martin, "Impact of Expressive Wrinkles on Perception of a Virtual Character's Facial Expressions of Emotions," in Intelligent Virtual Agents, vol. 5773, Z. Ruttkay, M. Kipp, A. Nijholt, and H. H. Vilhjálmsson, Eds., in Lecture Notes in Computer Science, vol. 5773. , Berlin, Heidelberg: Springer Berlin Heidelberg, 2009, pp. 201–214. doi: 10.1007/978-3-642-04380-2_24.
+
+This paper is based on the 9th International Conference on Intelligent Virtual Agents, held September 14–16, 2009 in Amsterdam, The Netherlands. It covers many topics related to 3D, but I specifically focused on the section "Expression of Emotions Using Wrinkles, Blushing, Sweating and Tears"; here, they explain more about wrinkles and how they are important for reading facial expressions, and also go a bit into how they form.
+
+"Regarding wrinkles, two kinds can be distinguished [7]: (a) permanent wrinkles, which are caused by aging and habitual facial expressions as the skin looses elasticity; (b) temporary wrinkles, which are caused by deformations of the skin layers as a result of muscle contraction."
+
+
+[26] "Lou Rig." Accessed: May 22, 2026. [Online]. Available: https://klimov.gumroad.com/l/ikrQP
+
+Very well known rig. Used as reference for controller placement and also to illustrate my paper.
+
+
+[27] Node Beast CG Academy, Maya Rigging Basics I: 29-1 remapValue, (Feb. 15, 2026). Accessed: Jun. 08, 2026. [Online Video]. Available: https://www.youtube.com/watch?v=_-Pr6quibBA
+
+Video explaining how to use the remap value node in Maya for rigging. Used then in my joint based rig.
+
+
+[28] "Painting Wrinkle Maps." Accessed: May 22, 2026. [Online]. Available: https://download.autodesk.com/global/docs/softimage2014/en_us/files/face_tune_PaintingWrinkleMaps.htm
+
+This documentation explains how wrinkle maps are created and painted within a professional 3D pipeline in Maya. Used for the definition in my theoretical framework.
+
+
+[29] "Paul Neale Breaks Down Facial Rigging Techniques." Accessed: Mar. 03, 2026. [Online]. Available: https://80.lv/articles/paul-neale-breaks-down-facial-rigging-techniques
+
+This article discusses different facial rigging techniques and emphasizes that the choice of rigging method should depend on the needs of the project rather than following a single standard solution. I used it as a supporting source for my comparison of facial rigging approaches, as it reinforced the idea that different techniques offer different advantages depending on the production requirements.
+
+
+[30] "Photogrammetry Rig, Yarrid Henrard," ArtStation. Accessed: May 11, 2026. [Online]. Available: https://www.artstation.com/artwork/vVoWE
+
+This collection of photogrammetry scans was used as a visual reference when sculpting the wrinkle blendshapes. The highly exaggerated facial expressions made it easier to observe how wrinkles form, compress, and fold across different regions of the face, helping me create more believable wrinkle shapes for my own character.
+
+
+[31] J. P. Lewis, M. Cordner, and N. Fong, "Pose Space Deformation: A Unified Approach to Shape Interpolation and Skeleton-Driven Deformation".
+
+This paper was used to understand the principles of Pose Space Deformation, where corrective shapes are triggered automatically based on a model's pose. It was particularly relevant to my project because the wrinkle blendshapes in my facial rig are activated in a similar pose-driven manner, making this source an important theoretical reference for the wrinkle system.
+
+
+[32] B. Bickel, M. Lang, M. Botsch, M. A. Otaduy, and M. Gross, "Pose-Space Animation and Transfer of Facial Details".
+
+This paper helped me better understand different facial deformation techniques, especially Pose Space Deformation and the use of corrective shapes. It is a source that is frequently referenced in facial rigging research, and I used it to gain a broader understanding of how pose-driven deformations can improve facial animation. It also helped support the theoretical background behind the blendshape-based wrinkle system used in my project.
+
+
+[33] C. O. Cetinaslan, "Position Manipulation Techniques for Facial Animation".
+
+This dissertation provided additional background on facial rigging and facial animation workflows. It helped me better understand how different rigging techniques are organized and implemented in practice, while also reinforcing concepts discussed in other facial rigging literature used throughout my research.
+
+
+[34] J. Jimenez, J. I. Echevarria, C. Oat, and D. Gutierrez, "Practical and Realistic Facial Wrinkles Animation".
+
+This paper focuses on the automatic generation of facial wrinkles through wrinkle maps and deformation algorithms. While my project did not implement these techniques directly, the paper helped me better understand the principles behind dynamic wrinkle systems and provided additional context for the discussion of wrinkle maps in my theoretical framework.
+
+
+[35] J. P. Lewis, K. Anjyo, T. Rhee, M. Zhang, F. Pighin, and Z. Deng, "Practice and Theory of Blendshape Facial Models".
+
+This paper helped me better understand how blendshapes work and why they are widely used in facial rigging. It explains how different facial poses can be sculpted and blended together to create expressions, which supported the theoretical background of the blendshape-based approach analysed in my paper.
+
+
+[36] N. A. Rumman and M. Fratarcangeli, "State of the Art in Skinning Techniques for Articulated Deformable Characters," presented at the International Conference on Computer Graphics Theory and Applications, SCITEPRESS, Feb. 2016, pp. 200–212. doi: 10.5220/0005720101980210.
+
+This paper provided an overview of the state of the art in facial rigging up to 2016. I used it to gain a broader understanding of the different facial rigging techniques, trends, and challenges discussed in the literature. It was particularly useful for supporting the theoretical framework and placing my comparison of joint-based and blendshape-based rigs within a wider industry and research context.
+
+
+[37] Behance, "Ultimate Rigs for FREE - UGUR ULVI YETISKIN," Behance. Accessed: May 22, 2026. [Online]. Available: https://www.behance.net/gallery/17774421/Ultimate-Rigs-for-FREE
+
+This one was used to illustrate the part of my paper about the definition of rigging.
+
+
+[38] U. Technologies, "Unity - Manual: Skinned Mesh Renderer component reference." Accessed: Mar. 03, 2026. [Online]. Available: https://docs.unity3d.com/6000.3/Documentation/Manual/class-SkinnedMeshRenderer.html
+
+This documentation provided guidance on Unity's Skinned Mesh Renderer component. I used it to better understand how skinned meshes and blendshapes are processed in Unity, which helped me verify that the facial rig functioned correctly after export from Maya.
+
+
+[39] R. Dojo, "Updated FACS Cheat Sheet," Rigging Dojo. Accessed: May 10, 2026. [Online]. Available: https://www.riggingdojo.com/2023/12/06/updated-facs-cheat-sheet/
+
+
+[40] "UV Layout Best Practices — Omniverse SimReady." Accessed: May 27, 2026. [Online]. Available: https://docs.omniverse.nvidia.com/simready/latest/simready-asset-creation/uv-best-practices.html?
+
+This guide was used as a practical reference for UV unwrapping. It provides clear best practices for creating clean and efficient UV layouts, which helped me unwrap my character model more quickly while avoiding common issues that could affect texturing and wrinkle map creation.
+
+
+[41] Harry, "What is the Facial Action Coding System?," EmotionIntell - EIA Group. Accessed: May 22, 2026. [Online]. Available: https://www.emotionintell.com/the-facial-action-coding-system/
+
+This source helped me understand and explain the basics of the Facial Action Coding System (FACS). I used it to define Action Units in the theoretical framework and to provide visual examples that made the concept easier to understand for the reader.
+
+
+[42] "Wooden man on strings," Getty Images. Accessed: May 22, 2026. [Online]. Available: https://www.gettyimages.be/detail/foto/wooden-man-on-strings-royalty-free-beeld/108730964
+
+Picture to illustrate the comparison between puppeteering and rigging.
+
+
+[43] "Working on a Face Rig for a Stylized Character in Maya." Accessed: Mar. 03, 2026. [Online]. Available: https://80.lv/articles/working-on-a-face-rig-for-a-stylized-character-in-maya
+
+This article was used as a visual and technical reference for facial rigging in stylized characters. It provided insight into how professional riggers approach facial controls and expressions in a stylized art style, offering useful inspiration during the development of my own facial rig.
