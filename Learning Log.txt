@@ -320,7 +320,7 @@ This paper focuses on the automatic generation of facial wrinkles through wrinkl
 
 [35] J. P. Lewis, K. Anjyo, T. Rhee, M. Zhang, F. Pighin, and Z. Deng, "Practice and Theory of Blendshape Facial Models".
 
-This paper helped me better understand how blendshapes work and why they are widely used in facial rigging. It explains how different facial poses can be sculpted and blended together to create expressions, which supported the theoretical background of the blendshape-based approach analysed in my paper.
+This paper helped me better understand how blendshapes work and why they are widely used in facial rigging. It explains how different facial poses can be sculpted and blended to create expressions, which supported the theoretical background of the blendshape-based approach analysed in my paper.
 
 
 [36] N. A. Rumman and M. Fratarcangeli, "State of the Art in Skinning Techniques for Articulated Deformable Characters," presented at the International Conference on Computer Graphics Theory and Applications, SCITEPRESS, Feb. 2016, pp. 200–212. doi: 10.5220/0005720101980210.
@@ -335,7 +335,7 @@ This one was used to illustrate the part of my paper about the definition of rig
 
 [38] U. Technologies, "Unity - Manual: Skinned Mesh Renderer component reference." Accessed: Mar. 03, 2026. [Online]. Available: https://docs.unity3d.com/6000.3/Documentation/Manual/class-SkinnedMeshRenderer.html
 
-This documentation provided guidance on Unity's Skinned Mesh Renderer component. I used it to better understand how skinned meshes and blendshapes are processed in Unity, which helped me verify that the facial rig functioned correctly after export from Maya.
+This documentation guided Unity's Skinned Mesh Renderer component. I used it to better understand how skinned meshes and blendshapes are processed in Unity, which helped me verify that the facial rig functioned correctly after export from Maya.
 
 
 [39] R. Dojo, "Updated FACS Cheat Sheet," Rigging Dojo. Accessed: May 10, 2026. [Online]. Available: https://www.riggingdojo.com/2023/12/06/updated-facs-cheat-sheet/
@@ -353,9 +353,44 @@ This source helped me understand and explain the basics of the Facial Action Cod
 
 [42] "Wooden man on strings," Getty Images. Accessed: May 22, 2026. [Online]. Available: https://www.gettyimages.be/detail/foto/wooden-man-on-strings-royalty-free-beeld/108730964
 
-Picture to illustrate the comparison between puppeteering and rigging.
+A picture to illustrate the comparison between puppeteering and rigging.
 
 
 [43] "Working on a Face Rig for a Stylized Character in Maya." Accessed: Mar. 03, 2026. [Online]. Available: https://80.lv/articles/working-on-a-face-rig-for-a-stylized-character-in-maya
 
 This article was used as a visual and technical reference for facial rigging in stylized characters. It provided insight into how professional riggers approach facial controls and expressions in a stylized art style, offering useful inspiration during the development of my own facial rig.
+
+
+[44] T. O’Hailey, Rig it right! : Maya animation rigging concepts. New York : Focal Press, Taylor & Francis Group, 2013. Accessed: Jun. 13, 2026. [Online]. Available: http://archive.org/details/rigitrightmayaan0000ohai#
+
+My favorite rigging book taught me most of the knowledge I have. Extremely useful to define certain concepts and explain pipelines correctly. A must-read for anyone who wants to be a rigger.
+
+
+---
+
+DAE's Paper's Comparison
+
+Ciel Moens Paper: 
+- Focus on film level face detail
+- Comparing Blender and Maya
+- Focused more on the visual of the wrinkles
+- Compared Wrinkle/Tensions maps on top of joint and blendshapes based rigs
+- Mentions Houdini as a possible procedural solution but does not use for experimentation
+- Mentions how the wrinkle workflow fails to teach a way to be implemented into a stylized project. 
+
+Alexandra Desmet Paper:
+- Focus on the film area
+- About making faces look more believable 
+- Includes looking for the best animation friendly option 
+- Uses FACS bs in Maya and Rokkoko software
+- Mocap was used for experiments 
+- Heavily focused on realism 
+
+Famke Dewachter Paper 
+- Compared Joint, blendshape and tension map wrinkle rig
+- Main goal is to achieved macro and micro detail on expressions
+- Compares impact on frame rate and animator friendliness in Maya 
+- Focus on the game environment/real-time engines 
+- Focus on emotions in the face 
+
+
